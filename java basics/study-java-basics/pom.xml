@@ -8,5 +8,12 @@
   <artifactId>study-java-basics</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
-
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+      <version>1.18.4</version>
+    </dependency>
+  </dependencies>
 </project>
