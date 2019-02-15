@@ -10,7 +10,7 @@ public class ArrayListStudy {
 
   public static void main(String [] args) {
 
-    List<Student> arrayList = new ArrayList();
+    ArrayList<Student> arrayList = new ArrayList();
     arrayList.add(new Student());
 
 
