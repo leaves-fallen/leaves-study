@@ -81,8 +81,49 @@ ArrayList 实现了 List 接口，动态数组。线程不安全。
          //自增列表结构 修改次数
          modCount++;
   
-         // overflow-conscious code
+         // 如果最小容量 大于缓冲区大小，就进行扩容操作
          if (minCapacity - elementData.length > 0)
              grow(minCapacity);
   }
+  
+   //扩容 以确保缓冲数组能容纳 最小容量(minCapacity) 的参数数量
+   private void grow(int minCapacity) {
+          // overflow-conscious code
+          int oldCapacity = elementData.length;
+          //新的容量=老的容量加上老的容量一半（右移1位，相当于除以2）
+          int newCapacity = oldCapacity + (oldCapacity >> 1);
+          if (newCapacity - minCapacity < 0)
+              newCapacity = minCapacity;//如果新容量小于最小容量，新容量=最小容量
+          if (newCapacity - MAX_ARRAY_SIZE > 0)
+              newCapacity = hugeCapacity(minCapacity);//新容量大于数组最大容量时，判断最小容量是否大于数组最大容量，代码如下
+          // minCapacity is usually close to size, so this is a win:
+          elementData = Arrays.copyOf(elementData, newCapacity); //使用Arrays的copy方法将原数组数据复制到新数组
+   }
+   //如果最小容量大于最大数组容量，返回int最大值 2147483647 也就是说，list最大可以存储这么多
+   private static int hugeCapacity(int minCapacity) {
+           if (minCapacity < 0) // overflow
+               throw new OutOfMemoryError(); //如果超出2147483647的上限，就会内存溢出 抛出异常
+           return (minCapacity > MAX_ARRAY_SIZE) ?
+               Integer.MAX_VALUE :
+               MAX_ARRAY_SIZE;
+       }
   ```
+* add(int index, E element) 将指定的元素添加到指定的位置
+  ```
+    public void add(int index, E element) {
+        rangeCheckForAdd(index);//判断索引是否合法，代码如下
+        //确保容量的大小足够 添加新的元素
+        ensureCapacityInternal(size + 1);  // Increments modCount!!
+        //将指定位置以后的所有元素往后移动一位(包括指定位置所在的那一个元素)
+        System.arraycopy(elementData, index, elementData, index + 1,
+                         size - index);
+        elementData[index] = element;//赋值
+        size++;//大小自增
+    }
+        //判断索引是否在 列表大小范围内
+        private void rangeCheckForAdd(int index) {
+            if (index > size || index < 0)
+                throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
+        }
+  ```
+  

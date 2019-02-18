@@ -16,9 +16,22 @@ public class ArrayListStudy {
 
   public static void main(String[] args) {
 
-    ArrayList<Student> arrayList = new ArrayList();
-    arrayList.add(new Student());
+   ArrayList<Integer> arrayList = new ArrayList();
 
+       arrayList.add(1);
+       arrayList.add(2);
+       arrayList.add(3);
+
+
+   // System.out.println( arrayList.get(4));
+
+  /*  Integer integer=2147483647;
+    System.out.println(integer);*/
+  }
+
+
+  public static void testRightMove(int a,int b){
+    System.out.println("a>>b:"+(a>>b));
   }
 
 }
