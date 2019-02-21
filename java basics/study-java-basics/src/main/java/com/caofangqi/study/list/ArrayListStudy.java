@@ -21,6 +21,14 @@ public class ArrayListStudy {
        arrayList.add(1);
        arrayList.add(2);
        arrayList.add(3);
+       arrayList.add(1);
+
+
+       arrayList.remove((Object)1);
+
+      for (int i = 0; i <arrayList.size() ; i++) {
+          System.out.println(arrayList.get(i));
+      }
 
 
    // System.out.println( arrayList.get(4));

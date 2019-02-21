@@ -126,4 +126,56 @@ ArrayList 实现了 List 接口，动态数组。线程不安全。
                 throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
         }
   ```
+ * E remove(int index) //删除指定位置的元素，返回改元素，此位置之后元素向左移一位
+  ```
+   public E remove(int index) {
+          rangeCheck(index); //检查索引是否在范围内
+  
+          modCount++;
+          //获取要删除的元素
+          E oldValue = elementData(index);
+          //计算出要移动的元素的数量 
+          int numMoved = size - index - 1;
+          //大于零，向左移动元素
+          if (numMoved > 0)
+              System.arraycopy(elementData, index+1, elementData, index,
+                               numMoved);
+          elementData[--size] = null; // clear to let GC do its work
+          //返回删除的元素
+          return oldValue;
+      }
+
+  ```
+ * boolean remove(Object o) //根据元素删除，返回布尔值  如果有多个相同的元素，该方法只会删除第一个元素
+    ```
+    public boolean remove(Object o) {
+    //如果传入值等于null
+         if (o == null) {
+             //遍历数组判断 然后快速删除
+             for (int index = 0; index < size; index++)
+                 
+                 if (elementData[index] == null) {
+                     fastRemove(index);
+                     return true;
+                 }
+         } else {
+            //不为空 遍历数组 使用equals 判断，然后删除
+             for (int index = 0; index < size; index++)
+                 if (o.equals(elementData[index])) {
+                     fastRemove(index);
+                     return true;
+                 }
+         }
+         return false;
+     }
+     //快速删除方法，没有索引边界检查
+     private void fastRemove(int index) {
+             modCount++;
+             int numMoved = size - index - 1;
+             if (numMoved > 0)
+                 System.arraycopy(elementData, index+1, elementData, index,
+                                  numMoved);
+             elementData[--size] = null; // clear to let GC do its work
+         }
+    ```
   
