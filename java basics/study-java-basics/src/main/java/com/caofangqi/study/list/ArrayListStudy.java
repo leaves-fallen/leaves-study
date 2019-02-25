@@ -3,7 +3,9 @@ package com.caofangqi.study.list;
 import com.caofangqi.study.model.Student;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 阅读ArrayList 源码
@@ -26,10 +28,15 @@ public class ArrayListStudy {
 
        arrayList.remove((Object)1);
 
-      for (int i = 0; i <arrayList.size() ; i++) {
-          System.out.println(arrayList.get(i));
-      }
 
+      arrayList.forEach(e-> {
+        System.out.println("----------------------------------");
+      });
+
+    Map<String,String> map=new HashMap<>();
+    map.forEach((e,d)->{
+
+    });
 
    // System.out.println( arrayList.get(4));
 

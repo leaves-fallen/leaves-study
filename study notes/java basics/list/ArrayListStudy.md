@@ -178,4 +178,47 @@ ArrayList 实现了 List 接口，动态数组。线程不安全。
              elementData[--size] = null; // clear to let GC do its work
          }
     ```
+*  E get(int index)  //获取某个下标索引的元素
+  ```
+   public E get(int index) {
+        //索引边界检查  检查不通过，抛出索引越界异常 IndexOutOfBoundsException 
+        rangeCheck(index);
+        //获取该索引位置的元素  返回
+        return elementData(index);
+    }
+    //获取该索引位置的元素  返回
+     E elementData(int index) {
+            return (E) elementData[index];
+        }
+  ```
+* E set(int index, E element) //设置某个位置的元素，返回老的元素
+  
+  ```
+      public E set(int index, E element) {
+          rangeCheck(index);//索引边界检查 
+  
+          E oldValue = elementData(index);//获取老的元素
+          elementData[index] = element;//设置新的元素
+          return oldValue;
+      }
+  ```
+* sort(Comparator<? super E> c) //排序方法
+  ```
+  // 传入一个比较器 
+     public void sort(Comparator<? super E> c) {
+          //记录当前结构改变次数
+          final int expectedModCount = modCount;
+          //排序
+          Arrays.sort((E[]) elementData, 0, size, c);
+          //如果排序之后 结构改变次数与排序前改变次数 不相等 则抛出异常
+          if (modCount != expectedModCount) {
+              throw new ConcurrentModificationException();
+          }
+          modCount++;
+      }
+  ```
+* 
+
+
+
   
