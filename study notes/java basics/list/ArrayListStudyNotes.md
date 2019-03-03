@@ -1,4 +1,4 @@
-# ArrayList  源码阅读
+# ArrayList  学习笔记(jdk1.8)
 ArrayList 实现了 List 接口，动态数组。线程不安全。
 ## 字段
 * DEFAULT_CAPACITY = 10;  //默认初始化数组长度
@@ -38,7 +38,7 @@ ArrayList 实现了 List 接口，动态数组。线程不安全。
        }
     ````
  * 通过已有的集合构造实例
-  [jdkBUG 6260652](Bug记录.md)
+    [jdkBUG 6260652](Bug记录.md)
     ```
         public ArrayList(Collection<? extends E> c) {
             // 集合转成数组 存进缓冲数组
@@ -108,6 +108,7 @@ ArrayList 实现了 List 接口，动态数组。线程不安全。
                MAX_ARRAY_SIZE;
        }
   ```
+
 * add(int index, E element) 将指定的元素添加到指定的位置
   ```
     public void add(int index, E element) {
@@ -126,26 +127,28 @@ ArrayList 实现了 List 接口，动态数组。线程不安全。
                 throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
         }
   ```
- * E remove(int index) //删除指定位置的元素，返回改元素，此位置之后元素向左移一位
-  ```
-   public E remove(int index) {
-          rangeCheck(index); //检查索引是否在范围内
-  
-          modCount++;
-          //获取要删除的元素
-          E oldValue = elementData(index);
-          //计算出要移动的元素的数量 
-          int numMoved = size - index - 1;
-          //大于零，向左移动元素
-          if (numMoved > 0)
-              System.arraycopy(elementData, index+1, elementData, index,
-                               numMoved);
-          elementData[--size] = null; // clear to let GC do its work
-          //返回删除的元素
-          return oldValue;
-      }
 
-  ```
+ * E remove(int index) //删除指定位置的元素，返回改元素，此位置之后元素向左移一位
+         ```
+      public E remove(int index) {
+           rangeCheck(index); //检查索引是否在范围内
+        
+           modCount++;
+           //获取要删除的元素
+           E oldValue = elementData(index);
+           //计算出要移动的元素的数量 
+           int numMoved = size - index - 1;
+           //大于零，向左移动元素
+           if (numMoved > 0)
+               System.arraycopy(elementData, index+1, elementData, index,
+                                numMoved);
+           elementData[--size] = null; // clear to let GC do its work
+           //返回删除的元素
+           return oldValue;
+       }
+      
+         ```
+
  * boolean remove(Object o) //根据元素删除，返回布尔值  如果有多个相同的元素，该方法只会删除第一个元素
     ```
     public boolean remove(Object o) {
@@ -178,7 +181,8 @@ ArrayList 实现了 List 接口，动态数组。线程不安全。
              elementData[--size] = null; // clear to let GC do its work
          }
     ```
-*  E get(int index)  //获取某个下标索引的元素
+
+* E get(int index)  //获取某个下标索引的元素
   ```
    public E get(int index) {
         //索引边界检查  检查不通过，抛出索引越界异常 IndexOutOfBoundsException 
@@ -191,8 +195,9 @@ ArrayList 实现了 List 接口，动态数组。线程不安全。
             return (E) elementData[index];
         }
   ```
+
 * E set(int index, E element) //设置某个位置的元素，返回老的元素
-  
+
   ```
       public E set(int index, E element) {
           rangeCheck(index);//索引边界检查 
@@ -202,6 +207,7 @@ ArrayList 实现了 List 接口，动态数组。线程不安全。
           return oldValue;
       }
   ```
+
 * sort(Comparator<? super E> c) //排序方法
   ```
   // 传入一个比较器 
@@ -217,6 +223,33 @@ ArrayList 实现了 List 接口，动态数组。线程不安全。
           modCount++;
       }
   ```
+
+* forEach(Consumer<? super E) action) // 遍历集合内元素
+
+    ```
+        public void forEach(Consumer<? super E> action) {
+           // 判断action 是否为空
+            Objects.requireNonNull(action);
+            //记录遍历之前得 结构改变次数(modCount)
+            final int expectedModCount = modCount;
+            @SuppressWarnings("unchecked")
+            final E[] elementData = (E[]) this.elementData;
+            final int size = this.size;
+            //for遍历
+            for (int i=0; modCount == expectedModCount && i < size; i++) {
+                action.accept(elementData[i]);
+            }
+            //如果执行期间 结构改变次数不一致，则抛出异常。
+            if (modCount != expectedModCount) {
+                throw new ConcurrentModificationException();
+            }
+        }
+    ```
+
+* List<E> subList(int fromIndex,int toIndex)  //
+
+##  迭代器的实现
+
 * 
 
 
