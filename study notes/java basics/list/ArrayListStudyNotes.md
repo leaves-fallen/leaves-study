@@ -38,7 +38,7 @@ ArrayList 实现了 List 接口，动态数组。线程不安全。
        }
     ````
  * 通过已有的集合构造实例
-    [jdkBUG 6260652](./Bug记录.md)
+    [jdkBUG 6260652](./BUGRecord.md)
 
     ```
         public ArrayList(Collection<? extends E> c) {
