@@ -249,6 +249,10 @@ ArrayList 实现了 List 接口，动态数组。线程不安全。
 
 * List<E> subList(int fromIndex,int toIndex)  //
 
+
+
+# 未待完续
+
 ##  迭代器的实现
 
 * 
