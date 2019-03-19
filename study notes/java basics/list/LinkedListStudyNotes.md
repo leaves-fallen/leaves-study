@@ -10,7 +10,7 @@ LinkedList  继承 抽象类AbstractSequentialList类,实现List接口。数据�
 
 LinkedList 是通过私有内部类Node来实现双向链表的。Node类源码如下:
 
-	```
+```
 		private static class Node<E> {
 	  	  E item; //当前元素
 	  	  Node<E> next; //存储下一个节点 Node对象
@@ -21,8 +21,9 @@ LinkedList 是通过私有内部类Node来实现双向链表的。Node类源码�
 	    	    this.next = next;
 	    	    this.prev = prev;
 	  	  }
-		}
-	```
+	 	}
+	 	
+```
 
 添加进来的元素封装进Node对象，然后通过一个一个的Node对象进行首尾链接，仿佛如同贪吃蛇。如下图所示:
 
