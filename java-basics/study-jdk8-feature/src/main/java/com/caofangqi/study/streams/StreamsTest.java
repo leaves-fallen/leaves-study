@@ -2,7 +2,9 @@ package com.caofangqi.study.streams;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -69,7 +71,7 @@ public class StreamsTest {
      *  Parallel Streams  并行流
      *  串行Stream上的操作是在一个线程中依次完成，而并行Stream则是在多个线程上同时执行。
      */
-    int max = 1000000;
+    int max = 100000;
     List<String> values = new ArrayList<>(max);
     for (int i = 0; i < max; i++) {
       UUID uuid = UUID.randomUUID();
@@ -90,11 +92,6 @@ public class StreamsTest {
     time2=System.nanoTime();
     System.out.println(String.format("parallel sort took: %d ms", TimeUnit.NANOSECONDS.toMillis(time2-time)));
 
-
-    /**
-     * Maps
-     *
-     */
 
 
   }
