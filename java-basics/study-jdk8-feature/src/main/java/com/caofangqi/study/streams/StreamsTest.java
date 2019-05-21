@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Stream;
 
 /**
  * 流 Streams java.util.Stream 表示能应用在一组元素上一次执行的操作序列。 Stream 操作分为中间操作或者最终操作两种，最终操作返回一特定类型的计算结果，
@@ -67,11 +68,12 @@ public class StreamsTest {
 
     System.out.println(  list.stream().sorted().reduce("开始了:",(s1,s2)->s1+"#"+s2));
 
+
     /**
      *  Parallel Streams  并行流
      *  串行Stream上的操作是在一个线程中依次完成，而并行Stream则是在多个线程上同时执行。
      */
-    int max = 100000;
+    int max = 10;
     List<String> values = new ArrayList<>(max);
     for (int i = 0; i < max; i++) {
       UUID uuid = UUID.randomUUID();
@@ -91,7 +93,6 @@ public class StreamsTest {
     count =values.parallelStream().sorted().count();
     time2=System.nanoTime();
     System.out.println(String.format("parallel sort took: %d ms", TimeUnit.NANOSECONDS.toMillis(time2-time)));
-
 
 
   }
