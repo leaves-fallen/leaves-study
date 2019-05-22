@@ -38,7 +38,21 @@ Java 中的类加载器大致可以分成两类，一类是系统提供的，另
 
 ### Class.forName
 
+`Class.forName`是一个静态方法，同样可以用来加载类。该方法有两种形式：
 
+* `Class.forName(String name, boolean initialize, ClassLoader loader)`
+
+  name表示的是类的全名；initialize表示是否初始化类；loader表示加载时使用的类加载器
+
+* `Class.forName(String className)`。`
+
+   相当于设置了参数 `initialize`的值为 `true`，`loader`的值为当前类的类加载器。
+
+  
+
+  Class.forName的一个很常见的用法是在加载数据库驱动的时候。如`Class.forName("org.apache.derby.jdbc.EmbeddedDriver").newInstance()`用来加载 Apache Derby 数据库的驱动。
+
+  
 
 # 参考资料
 
