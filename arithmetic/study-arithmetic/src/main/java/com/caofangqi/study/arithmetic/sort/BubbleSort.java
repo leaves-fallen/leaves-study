@@ -5,33 +5,31 @@ import java.util.Arrays;
 /**
  * 冒泡排序
  */
-public class BubbleSort {
+public class BubbleSort  implements Sort {
 
 
-  /**
-   * 冒泡排序
-   */
-  public static void bbbleSort(int[] nums) {
-   if (nums==null)
-     throw new RuntimeException("nums 不能为空!!!!!");
-     int length=nums.length;
-     int temp=0;
-    for (int i = 0; i < length; i++) {
-      for (int j = 0; j < length-1-i; j++) {
-          if (nums[j]>nums[j+1]){
-            temp=nums[j];
-            nums[j]=nums[j+1];
-            nums[j+1]=temp;
-          }
-      }
+    /**
+     * 冒泡排序
+     * 将数组按升序排列
+     */
+    @Override
+    public void sort(Comparable[] arr) {
+            int length=arr.length;
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length-1-i; j++) {
+                if (!less(arr[j],arr[j+1])){
+                  exch(arr,j,j+1);
+                }
+            }
+        }
     }
 
-  }
+
 
 
   public static void  main(String []args){
-    int [] nums=new int[]{1,2,4,8,9,5,24,32,12,45,76,13,1,324,4,2,1,43,56,8,32,6,8,2,4,3,34};
-       bbbleSort(nums);
+    Integer [] nums=new Integer[]{1,2,4,8,9,5,24,32,12,45,76,13,1,324,4,2,1,43,56,8,32,6,8,2,4,3,34};
+     new BubbleSort().sort(nums);
 
     System.out.println(  Arrays.toString(nums));
   }
