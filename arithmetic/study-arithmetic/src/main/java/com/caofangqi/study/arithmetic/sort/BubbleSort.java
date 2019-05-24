@@ -1,28 +1,26 @@
 package com.caofangqi.study.arithmetic.sort;
 
-import java.util.Arrays;
-
 /**
  * 冒泡排序
+ *
  */
-public class BubbleSort  implements Sort {
+public class BubbleSort implements Sort {
 
 
-    /**
-     * 冒泡排序
-     * 将数组按升序排列
-     */
-    @Override
-    public void sort(Comparable[] arr) {
-            int length=arr.length;
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length-1-i; j++) {
-                if (!less(arr[j],arr[j+1])){
-                  exch(arr,j,j+1);
-                }
-            }
+  /**
+   * 冒泡排序 将数组按升序排列
+   */
+  @Override
+  public void sort(Comparable[] arr) {
+    int length = arr.length;
+    for (int i = 0; i < length; i++) {
+      for (int j = 0; j < length - 1 - i; j++) {
+        if (!less(arr[j], arr[j + 1])) {
+          exch(arr, j, j + 1);
         }
+      }
     }
+  }
 
 
   @Override

@@ -11,7 +11,7 @@ public class SortTest {
 
   Sort sort;
   Integer[] nums = new Integer[]{879874, 5, 1374, 8674, 61, 35, 746, 745, 4165,
-      4, 9879, 7, 987, 979, 79, 789, 78, 645, 45, 13,635751,68486,132164 };
+      4, 9879, 7, 987, 979, 79, 789, 78, 645, 45, 13,45,35,635751,68486,132164 };
 
 
   public void test() {
@@ -26,7 +26,7 @@ public class SortTest {
    * 冒泡排序测试
    */
   @Test
-  public void bubbleSort() {
+  public void bubbleSortTest() {
     sort = new BubbleSort();
     test();
   }
@@ -35,8 +35,18 @@ public class SortTest {
    * 选择排序测试
    */
   @Test
-  public void selectionSort() {
+  public void selectionSortTest() {
     sort = new SelectionSort();
+    test();
+  }
+
+
+  /**
+   * 插入排序测试
+   */
+  @Test
+  public void InsertionSortTest() {
+    sort = new InsertionSort();
     test();
   }
 
