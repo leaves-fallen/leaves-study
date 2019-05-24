@@ -32,17 +32,17 @@ public interface Sort {
     * */
     default void show(Comparable[]arr){
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]+" ");
+            System.out.print(arr[i]+"  ");
         }
         System.out.println();
     }
     /*
-    * 检测是否有序
+    * 检测是否升序
     * */
     default boolean isSorted(Comparable[] arr){
         for (int i = 1; i < arr.length; i++) {
-            if (less(arr[i],arr[i-1]));
-            return false;
+            if (less(arr[i],arr[i-1]))
+                return false;
         }
         return true;
     }

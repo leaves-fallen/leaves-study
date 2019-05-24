@@ -25,13 +25,8 @@ public class BubbleSort  implements Sort {
     }
 
 
-
-
-  public static void  main(String []args){
-    Integer [] nums=new Integer[]{1,2,4,8,9,5,24,32,12,45,76,13,1,324,4,2,1,43,56,8,32,6,8,2,4,3,34};
-     new BubbleSort().sort(nums);
-
-    System.out.println(  Arrays.toString(nums));
+  @Override
+  public String toString() {
+    return "冒泡排序";
   }
-
 }
