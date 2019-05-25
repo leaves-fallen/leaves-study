@@ -9,19 +9,11 @@ public class InsertionSort implements Sort {
   @Override
   public void sort(Comparable[] arr) {
     int length=arr.length;
-    int preIndex;
-    Comparable current;
-    for (int i = 1; i < length; i++) {
-      preIndex=i-1;
-      current=arr[i];
-      while (preIndex>=0 && less(current,arr[preIndex]) ){
-          arr[preIndex+1]=arr[preIndex];
-          preIndex--;
+    for (int i = 1; i <length ; i++) {
+      for (int j = i; j >0&& less(arr[j],arr[j-1]); j--) {
+        exch(arr,j,j-1);
       }
-      arr[preIndex+1]=current;
-
     }
-    
   }
 
 }
