@@ -16,4 +16,9 @@ public class InsertionSort implements Sort {
     }
   }
 
+
+  @Override
+  public String toString() {
+    return "插入排序";
+  }
 }
