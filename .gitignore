@@ -1,0 +1,12 @@
+java basics/study-java-basics/.idea/
+java basics/study-java-basics/study-java-basics.iml
+.gitignore
+java-basics/study-java-basics/.idea/
+java-basics/study-java-basics/study-java-basics.iml
+java-basics/study-java-basics/target/
+arithmetic/study-arithmetic/.idea/
+*.iml
+arithmetic/study-arithmetic/target/
+.*/.idea/.*
+java-design-patterns/adapter-pattern/.idea/
+java-design-patterns/adapter-pattern/target/
