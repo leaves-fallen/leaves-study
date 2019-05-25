@@ -7,6 +7,9 @@ public class App {
 
 
   public static void main(String[] args) {
+   DoubleOrificePlug doubleOrificePlug =new DoubleOrificePlug(new TripiexReceptacleAdapter(new TripiexReceptacle()));
+
+   doubleOrificePlug.powerOn();
 
   }
 
