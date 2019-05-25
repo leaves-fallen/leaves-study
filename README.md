@@ -1,6 +1,6 @@
-# 叶子的学习规划
+# Leaves's Library Of Study Notes 
 
-# Java基础
+# Java basics
 
 1.  [ArrayList  学习笔记(jdk1.8)【待完善】](study-notes/java-basics/list/ArrayListStudyNotes.md)  
 2.  [LinkedList 学习笔记(jdk1.8)【待完善】](study-notes/java-basics/list/LinkedListStudyNotes.md)  
@@ -8,9 +8,5 @@
 
 
 
-
-
-
-
-### 坚持就是胜利
+### 学习使我快乐
 <img src="img/leaves-study.png"/>
