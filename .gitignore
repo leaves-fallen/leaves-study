@@ -10,3 +10,5 @@ arithmetic/study-arithmetic/target/
 .*/.idea/.*
 java-design-patterns/adapter-pattern/.idea/
 java-design-patterns/adapter-pattern/target/
+java-design-patterns/strategy-pattern/.idea/
+java-design-patterns/strategy-pattern/target/
