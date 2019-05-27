@@ -12,3 +12,17 @@ java-design-patterns/adapter-pattern/.idea/
 java-design-patterns/adapter-pattern/target/
 java-design-patterns/strategy-pattern/.idea/
 java-design-patterns/strategy-pattern/target/
+java-basics/study-jdk8-feature/target/
+java-design-patterns/abstract-document-pattern/.idea/
+java-design-patterns/abstract-document-pattern/target/
+java-design-patterns/abstract-factory-pattern/.idea/
+java-design-patterns/abstract-factory-pattern/target/
+java-design-patterns/chain-of-responsibility-pattern/.idea/
+java-design-patterns/chain-of-responsibility-pattern/target/
+*.jar
+java-basics/study-jdk8-feature/.idea/
+arithmetic/leetcode/.idea/
+*.class
+*.cmd
+web/spring/study-springboot/mvnw
+web/spring/study-springboot/.mvn/

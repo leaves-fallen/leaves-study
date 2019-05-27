@@ -75,6 +75,7 @@ public class App {
     setKing(factory.createKing());
     setCastle(factory.createCastle());
     setArmy(factory.createArmy());
+
   }
 
   King getKing(final KingdomFactory factory) {
