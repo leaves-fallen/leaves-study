@@ -26,3 +26,4 @@ arithmetic/leetcode/.idea/
 *.cmd
 web/spring/study-springboot/mvnw
 web/spring/study-springboot/.mvn/
+java-design-patterns/observer-pattern/.idea/
