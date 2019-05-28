@@ -10,11 +10,11 @@ public class MergeSort implements Sort {
 
   @Override
   public void sort(Comparable[] arr) {
-   mergeSoft(arr);
+
   }
 
 
-  public Comparable[] sortOfReturn(Comparable[]arr){
+  public Comparable[] sortWithReturn(Comparable[]arr){
     return mergeSoft(arr);
   }
   public Comparable[] mergeSoft(Comparable[]arr){

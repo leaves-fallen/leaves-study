@@ -66,7 +66,7 @@ public class SortTest {
     public void mergeSoft(){
       MergeSort  sort=new MergeSort();
         long st = System.nanoTime();
-       nums = sort.sortOfReturn(nums);
+       nums = sort.sortWithReturn(nums);
         long et = System.nanoTime();
         sort.show(nums);
         assertTrue(sort.isSorted(nums), "排序失败,数组不是升序的");
