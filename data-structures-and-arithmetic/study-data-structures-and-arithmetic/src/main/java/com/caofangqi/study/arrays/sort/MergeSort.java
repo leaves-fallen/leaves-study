@@ -1,4 +1,4 @@
-package com.caofangqi.study.arithmetic.sort;
+package com.caofangqi.study.arrays.sort;
 
 import java.util.Arrays;
 
