@@ -1,15 +1,9 @@
 package com.caofangqi.study.arrays.sort;
 
-/**
- * 冒泡排序
- *
- */
+/** 冒泡排序 */
 public class BubbleSort implements Sort {
 
-
-  /**
-   * 冒泡排序 将数组按升序排列
-   */
+  /** 冒泡排序 将数组按升序排列 */
   @Override
   public void sort(Comparable[] arr) {
     int length = arr.length;
@@ -21,7 +15,6 @@ public class BubbleSort implements Sort {
       }
     }
   }
-
 
   @Override
   public String toString() {

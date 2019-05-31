@@ -11,27 +11,25 @@ package com.caofangqi.study.arrays.sort;
  * */
 public class ShellSort implements Sort {
 
-    @Override
-    public void sort(Comparable[] arr) {
+  @Override
+  public void sort(Comparable[] arr) {
 
-        int length = arr.length;
+    int length = arr.length;
 
-        int h = 1;
-        while (h < length / 3) h = 3 * h + 1;
-        while (h >= 1) {
-            for (int i = h; i < length; i++) {
-                for (int j = i; j >= h && less(arr[j], arr[j - h]); j -= h) {
-                    exch(arr, j, j - h);
-                }
-            }
-            h = h / 3;
+    int h = 1;
+    while (h < length / 3) h = 3 * h + 1;
+    while (h >= 1) {
+      for (int i = h; i < length; i++) {
+        for (int j = i; j >= h && less(arr[j], arr[j - h]); j -= h) {
+          exch(arr, j, j - h);
         }
-
+      }
+      h = h / 3;
     }
+  }
 
-
-    @Override
-    public String toString() {
-        return "希尔排序";
-    }
+  @Override
+  public String toString() {
+    return "希尔排序";
+  }
 }

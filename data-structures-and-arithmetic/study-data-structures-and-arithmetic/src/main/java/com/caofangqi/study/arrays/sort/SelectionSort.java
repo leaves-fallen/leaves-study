@@ -1,14 +1,9 @@
 package com.caofangqi.study.arrays.sort;
 
-/**
- * 选择排序
- */
+/** 选择排序 */
 public class SelectionSort implements Sort {
 
-
-  /**
-   * 选择排序 将数组按升序排列
-   */
+  /** 选择排序 将数组按升序排列 */
   @Override
   public void sort(Comparable[] arr) {
     int length = arr.length;
@@ -21,7 +16,6 @@ public class SelectionSort implements Sort {
       }
     }
   }
-
 
   @Override
   public String toString() {

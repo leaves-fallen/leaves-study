@@ -1,5 +1,7 @@
 package com.caofangqi.study.arrays;
 
-public class ArraysDemo {
-
-}
+/*
+ * 数组
+ *
+ * */
+public class ArraysDemo {}
