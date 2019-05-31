@@ -1,5 +1,3 @@
 package com.caofangqi.study;
 
-public class Test {
-
-}
+public class Test {}

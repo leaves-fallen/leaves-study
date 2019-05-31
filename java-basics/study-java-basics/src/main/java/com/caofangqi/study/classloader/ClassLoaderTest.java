@@ -12,8 +12,8 @@ public class ClassLoaderTest {
 
   public static void showDifferentClassLoaderLoadClass() throws Exception {
     MyClassLoader myClassLoader = new MyClassLoader();
-    Object obj = myClassLoader.loadClass("com.caofangqi.study.classloader.ClassLoaderTest")
-        .newInstance();
+    Object obj =
+        myClassLoader.loadClass("com.caofangqi.study.classloader.ClassLoaderTest").newInstance();
     System.out.println(obj);
     System.out.println(obj instanceof ClassLoaderTest);
     System.out.println(obj.equals(new ClassLoaderTest()));
@@ -21,8 +21,5 @@ public class ClassLoaderTest {
 
   public static void main(String[] args) throws Exception {
     showClassLoaderTree();
-
-
   }
-
 }
