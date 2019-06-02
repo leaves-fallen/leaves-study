@@ -19,28 +19,26 @@ public class MyStack {
 
   public MyStack(int stackSize) {
     this.stackSize = stackSize;
-      stack =new Object[stackSize];
+    stack = new Object[stackSize];
   }
-
 
   public MyStack() {
-      stack = new Object[stackSize];
+    stack = new Object[stackSize];
   }
 
-  //压栈
-    public void push(Object o){
-    if (top+1>stackSize){
-        throw new RuntimeException("栈上溢。。。");
+  // 压栈
+  public void push(Object o) {
+    if (top + 1 > stackSize) {
+      throw new RuntimeException("栈上溢。。。");
     }
-    this.stack[top++-1]=o;
-    }
+    this.stack[top++] = o;
+  }
 
-    //弹栈
-    public Object pop(){
-      if (top==0){
-          throw new RuntimeException("栈下溢。。。。");
-      }
-      return stack[top---1];
+  // 弹栈
+  public Object pop() {
+    if (top == 0) {
+      throw new RuntimeException("栈下溢。。。。");
     }
-
+    return stack[top---1];
+  }
 }
