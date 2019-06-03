@@ -1,34 +1,31 @@
 package com.caofangqi.study.stack;
 
-import java.util.ArrayList;
-import java.util.Stack;
 /*
  * 我的栈
  * */
 public class MyStack {
 
+  // 栈 默认大小
+  private final int defaultStackCapacity = 10;
   // 栈存储数组
   private Object[] stack;
-
   // 栈顶
   private int top;
-  // 栈 默认大小
-  private final int defaultStackSize = 10;
   // 栈大小;
-  private int stackSize = defaultStackSize;
+  private int stackCapacity = defaultStackCapacity;
 
   public MyStack(int stackSize) {
-    this.stackSize = stackSize;
+    this.stackCapacity = stackSize;
     stack = new Object[stackSize];
   }
 
   public MyStack() {
-    stack = new Object[stackSize];
+    stack = new Object[stackCapacity];
   }
 
   // 压栈
   public void push(Object o) {
-    if (top + 1 > stackSize) {
+    if (top + 1 > stackCapacity) {
       throw new RuntimeException("栈上溢。。。");
     }
     this.stack[top++] = o;
@@ -39,6 +36,17 @@ public class MyStack {
     if (top == 0) {
       throw new RuntimeException("栈下溢。。。。");
     }
-    return stack[top---1];
+    return stack[top-- - 1];
+  }
+
+  public Object peek() {
+    if (top == 0) {
+      throw new RuntimeException("栈为空");
+    }
+    return stack[top - 1];
+  }
+
+  public int getSize() {
+    return top;
   }
 }
