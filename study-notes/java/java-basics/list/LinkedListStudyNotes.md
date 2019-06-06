@@ -27,7 +27,7 @@ LinkedList 是通过私有内部类Node来实现双向链表的。Node类源码�
 
 添加进来的元素封装进Node对象，然后通过一个一个的Node对象进行首尾链接，仿佛如同贪吃蛇。如下图所示:
 
-<img src="/img/java-basics/list/doubly-linked.png"/>
+<img src="../../../../img/java-basics/list/doubly-linked.png"/>
 
 
 
