@@ -3,11 +3,9 @@
 .settings/
 target/
 devenv
-*.log*
 *.iml
 .idea/
 .mvn/
-web/spring/study-springboot/mvnw
-web/spring/study-springboot/mvnw.cmd
 *.jar
 *.class
+log/
