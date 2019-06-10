@@ -1,7 +1,11 @@
 package com.caofangqi.study.concurrency;
-/** 线程上下文切换 速度对比 测试 */
+/**
+ * 线程上下文切换 速度对比 测试
+ *
+ * @author 叶子
+ */
 public class ThreadContextSwitching {
-  public static final long count = 100000000;
+  public static final long count = 100000;
 
   public static void main(String[] args) throws InterruptedException {
     concurrency();
