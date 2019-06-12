@@ -6,7 +6,7 @@
 
 # Tomcat 系统架构
 
-<img src="../../img/web/tomcat/tomcat-architecture.png"/>
+<img src="../../../img/web/tomcat/tomcat-architecture.png"/>
 
 
 
@@ -30,7 +30,7 @@ Tomcat 为了实现支持多种 I/O 模型和应用层协议，一个容器可�
 
 如下图所示:
 
-![](../../img/web/tomcat/connector-container.jpg)
+![](../../../img/web/tomcat/connector-container.jpg)
 
 最顶层是 Server，这里的 Server 指的就是一个 Tomcat 实例。一个 Server 中有一个或者多个 Service，一个 Service 中有多个连接器和一个容器。连接器与容器之间通过标准的 ServletRequest 和 ServletResponse 通信。
 
