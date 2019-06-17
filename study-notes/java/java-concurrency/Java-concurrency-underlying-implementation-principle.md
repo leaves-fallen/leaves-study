@@ -40,4 +40,3 @@ CPU多级缓存如下图所示（[图来源于网络](http://www.woshipm.com/pd/
 缓存一致性协议图([图来源于网络](https://blog.csdn.net/n9nzjx57bf/article/details/71638893))：
 
 ![](../../../img/java-concurrency/cpu-cache-consistency .jpg)
-
