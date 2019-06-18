@@ -28,25 +28,7 @@ Channel，Buffer 和 Selector 构成了 NIO 核心的API。
 
 channel 和 IO 中的 流类似，只不过流是单向的，而 Channel 是双向的，既可以读也可以写，如上图所示. 
 
-Channel 主要实现如下:
-
-* FileChannel
-
-  FileChannel 从文件中读写数据。
-
-* DatagramChannel
-
-  DatagramChannel 能通过UDP读写网络中的数据。
-
-* SocketChannel
-
-  SocketChannel 能通过TCP读写网络中的数据。
-
-* ServerSocketChannel
-
-  ServerSocketChannel可以监听新进来的TCP连接，像Web服务器那样。对每一个新进来的连接都会创建一个SocketChannel。
-
-
+[Channel 详细](./Channel.md)
 
 ### Buffer
 

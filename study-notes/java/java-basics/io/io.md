@@ -28,7 +28,7 @@ I/O 就是计算机内存与外部设备之间拷贝数据的过程。
 
 ## Java I/O 模型 
 
- 下列图出自极客时间[深入拆解 Tomcat & Jetty](https://time.geekbang.org/column/article/100307)
+ 下列图出自极客时间 [深入拆解 Tomcat & Jetty](https://time.geekbang.org/column/article/100307)
 
 ### 同步阻塞 I/O
 
